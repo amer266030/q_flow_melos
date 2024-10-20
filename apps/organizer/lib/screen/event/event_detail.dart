@@ -12,7 +12,7 @@ class AddEvent extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: context.screenWidth * 0.2),
+              SizedBox(height: context.screenWidth * 0.3),
               Padding(
                 padding: EdgeInsets.only(left: context.screenWidth * 0.08),
                 child: Align(
@@ -33,7 +33,7 @@ class AddEvent extends StatelessWidget {
               TextButton(
                   onPressed: () {},
                   child: Text(
-                    'Add Event',
+                    'Add Event Picture',
                     style: context.bodyMedium.copyWith(color: context.primary),
                   )),
               SizedBox(height: context.screenWidth * 0.03),
