@@ -10,9 +10,17 @@ class LoginScreen extends StatelessWidget {
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          SizedBox(height: context.screenWidth * 0.3),
+          Image.asset('assets/img/q_green.png'),
           SizedBox(height: context.screenWidth * 0.2),
-          Text('Login', style: context.titleLarge),
-          SizedBox(height: context.screenWidth * 0.6),
+          Padding(
+            padding: EdgeInsets.only(left: context.screenWidth * 0.09),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text('Login', style: context.titleLarge),
+            ),
+          ),
+          SizedBox(height: context.screenWidth * 0.3),
           Padding(
             padding:
                 EdgeInsets.symmetric(horizontal: context.screenWidth * 0.09),
@@ -22,7 +30,7 @@ class LoginScreen extends StatelessWidget {
               validation: (String value) {},
             ),
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: context.screenWidth * 0.1),
           PrimaryBtn(
             title: 'Login',
             callback: () {},
