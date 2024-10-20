@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
           Image.asset('assets/img/q_green.png'),
           SizedBox(height: context.screenWidth * 0.2),
           Padding(
-            padding: EdgeInsets.only(left: context.screenWidth * 0.09),
+            padding: EdgeInsets.only(left: context.screenWidth * 0.08),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text('Login', style: context.titleLarge),
@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
           SizedBox(height: context.screenWidth * 0.3),
           Padding(
             padding:
-                EdgeInsets.symmetric(horizontal: context.screenWidth * 0.09),
+                EdgeInsets.symmetric(horizontal: context.screenWidth * 0.05),
             child: CustomTextField(
               hintText: 'Email',
               controller: TextEditingController(),

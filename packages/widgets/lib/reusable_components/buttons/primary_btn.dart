@@ -14,7 +14,7 @@ class PrimaryBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: isSmall ? 100 : 200,
+      width: isSmall ? context.screenWidth * 0.7 : context.screenWidth * 0.9,
       decoration: BoxDecoration(
         gradient: LinearGradient(
             colors: [context.primary, Colors.black],
