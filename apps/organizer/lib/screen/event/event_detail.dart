@@ -19,7 +19,7 @@ class AddEvent extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(height: context.screenWidth * 0.3),
+                  SizedBox(height: context.screenWidth * 0.4),
                   Padding(
                     padding: EdgeInsets.only(left: context.screenWidth * 0.08),
                     child: Align(
@@ -29,7 +29,7 @@ class AddEvent extends StatelessWidget {
                   SizedBox(height: context.screenWidth * 0.03),
                   CircleAvatar(
                     radius: context.screenWidth * 0.3,
-                    backgroundColor: context.primary,
+                    backgroundColor: context.bg3,
                     child: Icon(
                       Icons.person,
                       size: context.screenWidth * 0.2,
