@@ -6,6 +6,16 @@ part 'add_event_state.dart';
 class AddEventCubit extends Cubit<AddEventState> {
   AddEventCubit() : super(AddEventInitial());
 
+  addEventPicture() {
+    emitLoading();
+
+    print('add event picture');
+
+    Future.delayed(const Duration(seconds: 2), () {});
+
+    emitUpdate();
+  }
+
   startDate() {
     emitLoading();
 
@@ -40,6 +50,16 @@ class AddEventCubit extends Cubit<AddEventState> {
     emitLoading();
 
     print('upload visitors file');
+
+    Future.delayed(const Duration(seconds: 2), () {});
+
+    emitUpdate();
+  }
+
+  createEvent() {
+    emitLoading();
+
+    print('create event');
 
     Future.delayed(const Duration(seconds: 2), () {});
 
