@@ -2,9 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_melos_widgets/widgets.dart';
-import 'screen/login_screen.dart';
+import 'screen/event/event_home.dart';
+import 'screen/home_screen.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
@@ -32,7 +33,7 @@ class MainApp extends StatelessWidget {
             supportedLocales: context.supportedLocales, // From EasyLocalization
             localizationsDelegates:
                 context.localizationDelegates, // From EasyLocalization
-            home: LoginScreen(),
+            home: HomeScreen(),
           );
         },
       ),

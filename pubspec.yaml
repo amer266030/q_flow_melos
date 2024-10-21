@@ -5,4 +5,5 @@ environment:
 dev_dependencies:
   melos: ^6.2.0
 dependencies:
+  flutter_expandable_fab: ^2.3.0
   
