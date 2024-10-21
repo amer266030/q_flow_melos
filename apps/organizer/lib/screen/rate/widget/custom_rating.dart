@@ -11,14 +11,18 @@ class CustomRating extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        RichText(
-            text: TextSpan(children: [
-          TextSpan(
-            text: boldText,
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          ),
-          TextSpan(text: text, style: TextStyle(color: Colors.grey))
-        ])),
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: RichText(
+              text: TextSpan(children: [
+            TextSpan(
+              text: boldText,
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            TextSpan(text: text, style: TextStyle(color: Colors.grey))
+          ])),
+        ),
         SizedBox(height: context.screenHeight * 0.01),
         Align(
           alignment: Alignment.center,
@@ -34,7 +38,10 @@ class CustomRating extends StatelessWidget {
           ),
         ),
         SizedBox(height: context.screenHeight * 0.01),
-        Divider(thickness: context.screenHeight * 0.003),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Divider(thickness: context.screenHeight * 0.003),
+        ),
       ],
     );
   }
