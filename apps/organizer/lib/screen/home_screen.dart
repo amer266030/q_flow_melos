@@ -23,24 +23,48 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              children: [
-                SizedBox(width: context.screenWidth * 0.02),
-                Image.asset('assets/img/q_green.png',
-                    width: context.screenWidth * 0.2,
-                    height: context.screenWidth * 0.2),
-                SizedBox(width: context.screenWidth * 0.01),
-                Text('Tuwaiq Academy', style: context.titleMedium)
-              ],
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            expandedHeight: context.screenHeight * 0.1,
+            flexibleSpace: FlexibleSpaceBar(
+              background: Column(
+                children: [
+                  SizedBox(height: context.screenHeight * 0.05),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(width: context.screenWidth * 0.2),
+                      Row(
+                        children: [
+                          SizedBox(width: context.screenWidth * 0.06),
+                          Image.asset('assets/img/q_green.png',
+                              width: context.screenWidth * 0.15,
+                              height: context.screenWidth * 0.15),
+                          SizedBox(width: context.screenWidth * 0.01),
+                          Text('Tuwaiq Academy', style: context.titleSmall)
+                        ],
+                      ),
+                      SizedBox(height: context.screenWidth * 0.001),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: context.screenWidth * 0.05),
+                        child: Divider(),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: context.screenWidth * 0.001),
-            Divider()
-          ],
-        ),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate([
+              SizedBox(height: context.screenHeight * 0.04),
+              Text('Rate', style: context.titleLarge),
+              SizedBox(height: context.screenHeight * 0.04),
+            ]),
+          )
+        ],
       ),
     );
   }
