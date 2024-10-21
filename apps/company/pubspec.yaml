@@ -1,0 +1,52 @@
+name: company
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_bloc: ^8.1.6
+  my_melos_widgets: 0.0.1
+  easy_localization: ^3.0.7
+
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+
+flutter:
+  uses-material-design: true
+  assets:
+  - assets/translations/
+  - assets/logo/
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+          weight: 100
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+          weight: 200
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+          weight: 300
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+          weight: 700
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+          weight: 800
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+          weight: 900
+
+
