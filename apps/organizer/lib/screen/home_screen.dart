@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,9 +7,20 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
+      floatingActionButtonLocation: ExpandableFab.location,
+      floatingActionButton: ExpandableFab(
+        children: [
+          FloatingActionButton.small(
+            heroTag: null,
+            child: const Icon(Icons.edit),
+            onPressed: () {},
+          ),
+          FloatingActionButton.small(
+            heroTag: null,
+            child: const Icon(Icons.search),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: Center(
         child: Text('Home'),
