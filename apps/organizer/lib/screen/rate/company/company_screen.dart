@@ -18,7 +18,7 @@ class CompanyScreen extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate([
               SizedBox(height: context.screenHeight * 0.04),
-              Text('Rate', style: context.titleLarge),
+              Text('ABC Company', style: context.titleLarge),
               SizedBox(height: context.screenHeight * 0.04),
             ]),
           )

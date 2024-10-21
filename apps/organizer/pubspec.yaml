@@ -18,7 +18,7 @@ dependencies:
   easy_localization: ^3.0.7
   flutter_expandable_fab: ^2.3.0
   fl_chart: ^0.69.0
-  flutter_rating_stars: ^1.1.0
+  card_swiper: ^3.0.1
 
 # our packages here
   my_melos_widgets: 0.0.1
