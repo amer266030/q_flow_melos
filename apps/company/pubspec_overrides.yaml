@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: my_melos_widgets
+dependency_overrides:
+  my_melos_widgets:
+    path: ../../packages/widgets
