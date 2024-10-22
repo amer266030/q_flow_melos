@@ -45,6 +45,7 @@ class CompanyScreen extends StatelessWidget {
                       'Were the interview questions clear and relevant to the role?'),
               CustomRating(
                   boldText: 'Time Management: ',
+                  ratingNumber: 5.0,
                   text:
                       'Was the interview conducted within the scheduled time frame?'),
               CustomRating(
