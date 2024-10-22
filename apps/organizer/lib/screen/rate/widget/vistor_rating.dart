@@ -12,26 +12,29 @@ class VisitorRating extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(text!,
-                style: TextStyle(
-                    color: Colors.black, fontWeight: FontWeight.bold)),
-            Align(
-              alignment: Alignment.center,
-              child: RatingBarIndicator(
-                rating:ratingNumber ??2.90,
-                itemBuilder: (context, index) => Icon(
-                  Icons.star,
-                  color: Color(0xff199C90),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: context.screenWidth * 0.05),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(text!,
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold)),
+              Align(
+                alignment: Alignment.center,
+                child: RatingBarIndicator(
+                  rating: ratingNumber ?? 2.90,
+                  itemBuilder: (context, index) => Icon(
+                    Icons.star,
+                    color: Color(0xff199C90),
+                  ),
+                  itemCount: 5,
+                  itemSize: 30,
+                  direction: Axis.horizontal,
                 ),
-                itemCount: 5,
-                itemSize: 40,
-                direction: Axis.horizontal,
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         SizedBox(height: context.screenHeight * 0.01),
         Padding(

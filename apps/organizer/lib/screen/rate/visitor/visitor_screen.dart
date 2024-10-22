@@ -22,17 +22,17 @@ class VisitorScreen extends StatelessWidget {
           SizedBox(height: context.screenHeight * 0.04),
           Padding(
             padding: EdgeInsets.only(left: context.screenWidth * 0.03),
-            child: Text('Yara Albouq', style: context.titleLarge),
+            child: Text('Yara Albouq', style: context.titleMedium),
           ),
           SizedBox(height: context.screenHeight * 0.01),
           Padding(
             padding: EdgeInsets.only(left: context.screenWidth * 0.05),
-            child: Text('???????????', style: context.titleMedium),
+            child: Text('id', style: context.titleSmall),
           ),
           SizedBox(height: context.screenHeight * 0.03),
           Padding(
             padding: EdgeInsets.only(left: context.screenWidth * 0.06),
-            child: Text('Rating:', style: context.titleLarge),
+            child: Text('Rating:', style: context.titleSmall),
           ),
           SizedBox(height: context.screenHeight * 0.03),
           VisitorRating(text: 'Technical Skills', ratingNumber: 3.90),
