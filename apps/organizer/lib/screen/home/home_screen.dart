@@ -88,10 +88,8 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (BuildContext context, int index) {
                         return InkWell(
                           onTap: () {
-                            WidgetsBinding.instance.addPostFrameCallback((_) {
                               cubit.currentIndex(
                                   context: context, myIndex: index);
-                            });
                           },
                           child: Image.asset(
                             'assets/img/test.png',

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_melos_widgets/widgets.dart';
+import 'package:organizer/screen/event/event_home.dart';
 
 import '../../event/event_detail.dart';
 
@@ -29,7 +30,12 @@ class HomeCubit extends Cubit<HomeState> {
   currentIndex({required int myIndex, required BuildContext context}) {
     emitLoading();
     print(myIndex);
-    context.goTo(AddEvent());
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EventHome(),
+      ),
+    );
     emitUpdate();
   }
 
