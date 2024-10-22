@@ -35,7 +35,7 @@ class MainApp extends StatelessWidget {
             supportedLocales: context.supportedLocales, // From EasyLocalization
             localizationsDelegates:
                 context.localizationDelegates, // From EasyLocalization
-            home: CompanyScreen(),
+            home: VisitorScreen(),
           );
         },
       ),
