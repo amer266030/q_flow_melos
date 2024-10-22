@@ -23,21 +23,21 @@ class HomeScreen extends StatelessWidget {
                 heroTag: null,
                 backgroundColor: context.primary,
                 shape: const StadiumBorder(),
-                onPressed: () {},
+                onPressed: () => cubit.currentLanguage(lang: 'Language'),
                 child: const Icon(Icons.logout, color: Colors.white),
               ),
               FloatingActionButton.small(
                 heroTag: null,
                 backgroundColor: context.primary,
                 shape: const StadiumBorder(),
-                onPressed: () {},
+                onPressed: () => cubit.currentMode(mode: 'Mode'),
                 child: Icon(Icons.dark_mode, color: context.bg1),
               ),
               FloatingActionButton.small(
                 heroTag: null,
                 backgroundColor: context.primary,
+                onPressed: () => cubit.currentLanguage(lang: 'Logout'),
                 shape: const StadiumBorder(),
-                onPressed: () {},
                 child: Text('AR', style: TextStyle(color: context.bg1)),
               ),
             ],
@@ -87,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (BuildContext context, int index) {
                         return InkWell(
                           onTap: () {
-                            cubit.currentIndex(index);
+                            cubit.currentIndex(myIndex: index);
                           },
                           child: Image.asset(
                             'assets/img/test.png',

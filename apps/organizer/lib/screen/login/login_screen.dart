@@ -14,7 +14,6 @@ class LoginScreen extends StatelessWidget {
         final cubit = context.read<LoginCubit>();
         return Scaffold(
           body: Column(
-            // mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(height: context.screenWidth * 0.3),
               Image.asset('assets/img/q_green.png'),
