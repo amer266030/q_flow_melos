@@ -8,15 +8,19 @@ class CustomTextField extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.max = 1,
+    this.min,
     required this.controller,
     required this.validation,
     this.onChanged,
     this.readOnly = false,
     this.isObscure = false,
+    this.borderRadius,
   });
   final String hintText;
   final Widget? prefixIcon;
   final int? max;
+  final int? min;
+  final double? borderRadius;
   final Widget? suffixIcon;
   final TextEditingController controller;
   final Function(String value) validation;
@@ -34,7 +38,7 @@ class CustomTextField extends StatelessWidget {
         maxLines: max,
         // obscureText: ,
         onChanged: onChanged,
-        minLines: 1,
+        minLines: min ?? 1,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         controller: controller,
         textCapitalization: TextCapitalization.none,
@@ -45,11 +49,11 @@ class CustomTextField extends StatelessWidget {
                 .fontSize, // Optional: Adjust the font size of the error message
           ),
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(100),
+            borderRadius: BorderRadius.circular(borderRadius ?? 100),
             borderSide: BorderSide(color: Colors.transparent),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(100),
+            borderRadius: BorderRadius.circular(borderRadius ?? 100),
             borderSide: BorderSide(color: Colors.transparent),
           ),
           contentPadding: const EdgeInsets.all(16),
@@ -58,15 +62,15 @@ class CustomTextField extends StatelessWidget {
           suffixIcon: suffixIcon,
           suffixIconColor: context.primary,
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(100),
+            borderRadius: BorderRadius.circular(borderRadius ?? 100),
             borderSide: BorderSide(color: Colors.transparent),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(100),
+            borderRadius: BorderRadius.circular(borderRadius ?? 100),
             borderSide: BorderSide(color: Colors.transparent),
           ),
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(100),
+              borderRadius: BorderRadius.circular(borderRadius ?? 100),
               borderSide: BorderSide(color: Colors.transparent)),
           filled: true,
           fillColor: context.bg2,

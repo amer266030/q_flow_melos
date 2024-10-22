@@ -19,6 +19,7 @@ dependencies:
   supabase_flutter: ^2.8.0
   image_picker: ^1.1.2
   animated_snack_bar: ^0.4.0
+  
 
 
 dev_dependencies:

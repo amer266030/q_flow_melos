@@ -17,34 +17,12 @@ class AppBarView extends StatelessWidget implements PreferredSizeWidget {
             size: 30,
           )),
       centerTitle: true,
-      title: Column(
-        children: [
-          AspectRatio(
-            aspectRatio: 5.5,
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 1,
-                    blurRadius: 3,
-                    blurStyle: BlurStyle.outer,
-                  ),
-                ],
-              ),
-              child: Image(image: Img.logo),
-            ),
-          ),
-          // const SizedBox(height: 8),
-          // Text(
-          //   "SDAIA",
-          //   style: TextStyle(
-          //     color: context.textColor1,
-          //     fontSize: context.bodyLarge.fontSize,
-          //   ),
-          // ),
-        ],
+      title: Text(
+        "SDAIA",
+        style: TextStyle(
+          color: context.textColor1,
+          fontSize: context.titleMedium.fontSize,
+        ),
       ),
       actions: [
         IconButton(

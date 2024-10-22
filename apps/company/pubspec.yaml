@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  bootstrap_icons: ^1.11.3
   flutter_bloc: ^8.1.6
   my_melos_widgets: 0.0.1
   easy_localization: ^3.0.7

@@ -91,21 +91,23 @@ class HomeScreen extends StatelessWidget {
                                   ? Swiper(
                                       layout: SwiperLayout.CUSTOM,
                                       customLayoutOption: CustomLayoutOption(
-                                          startIndex: -1, stateCount: 3)
+                                          startIndex: -1, stateCount: 2)
                                         ..addRotate(
-                                            [-45.0 / 180, 0.0, 45.0 / 180])
+                                            [-70.0 / 200, 0.0, 90.0 / 200])
                                         ..addTranslate([
-                                          Offset(-370.0, -40.0),
+                                          Offset(-180.0, -20.0),
                                           Offset(0.0, 0.0),
-                                          Offset(370.0, -40.0)
+                                          Offset(170.0, -40.0)
                                         ]),
                                       itemWidth: context.screenWidth * 0.9,
                                       itemCount: cubit.filteredVisitors.length,
                                       itemBuilder: (context, index) {
                                         final visitor =
                                             cubit.filteredVisitors[index];
-                                        return SwiperCard(
-                                          visitor: visitor,
+                                        return Column(
+                                          children: [
+                                            VisitorAvatarControl(),
+                                          ],
                                         );
                                       },
                                       pagination: SwiperPagination(
@@ -130,10 +132,16 @@ class HomeScreen extends StatelessWidget {
                                     ),
                             ),
                             cubit.selectedStatus == VisitorStatus.inQueue
-                                ? AspectRatio(
-                                    aspectRatio: 7,
-                                    child: PrimaryBtn(
-                                        callback: () {}, title: "Start"))
+                                ? Row(
+                                    children: [
+                                      Expanded(
+                                          child: PrimaryBtn(
+                                              callback: () => cubit
+                                                  .navigateToVisitorDetails(
+                                                      context),
+                                              title: "Start")),
+                                    ],
+                                  )
                                 : Text("")
                           ],
                         );

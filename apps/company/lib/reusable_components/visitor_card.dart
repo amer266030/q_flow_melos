@@ -1,4 +1,5 @@
 import 'package:company/model/user/visitor.dart';
+import 'package:company/reusable_components/button/book_mark_btn.dart';
 import 'package:company/reusable_components/visitor_avatar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_melos_widgets/widgets.dart';
@@ -82,16 +83,8 @@ class VisitorCard extends StatelessWidget {
                   ],
                 ),
               ),
-              IconButton(
-                onPressed: toggleBookmark,
-                icon: Icon(
-                  isBookmarked
-                      ? CupertinoIcons.bookmark_fill
-                      : CupertinoIcons.bookmark,
-                  size: context.titleSmall.fontSize,
-                  color: isBookmarked ? context.primary : context.textColor2,
-                ),
-              )
+              BookMarkbtn(
+                  isBookmarked: isBookmarked, toggleBookmark: toggleBookmark)
             ],
           ),
         ),
