@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:my_melos_widgets/widgets.dart';
+import 'package:organizer/screen/event/event_detail.dart';
 
 import 'cubit/home_cubit.dart';
 
@@ -87,7 +88,10 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (BuildContext context, int index) {
                         return InkWell(
                           onTap: () {
-                            cubit.currentIndex(myIndex: index);
+                            WidgetsBinding.instance.addPostFrameCallback((_) {
+                              cubit.currentIndex(
+                                  context: context, myIndex: index);
+                            });
                           },
                           child: Image.asset(
                             'assets/img/test.png',

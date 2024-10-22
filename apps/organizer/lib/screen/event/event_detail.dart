@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_melos_widgets/widgets.dart';
 
 import 'cubit/add_event_cubit.dart';
+import 'event_home.dart';
 
 class AddEvent extends StatelessWidget {
   const AddEvent({super.key});
@@ -118,7 +118,8 @@ class AddEvent extends StatelessWidget {
                   ),
                   SizedBox(height: context.screenWidth * 0.01),
                   PrimaryBtn(
-                    callback: cubit.createEvent,
+                    callback:
+                        cubit.createEvent(context: context, page: EventHome()),
                     title: 'Create Event',
                   ),
                   SizedBox(height: context.screenWidth * 0.01),

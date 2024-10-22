@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_melos_widgets/widgets.dart';
 
 part 'add_event_state.dart';
 
@@ -56,13 +57,9 @@ class AddEventCubit extends Cubit<AddEventState> {
     emitUpdate();
   }
 
-  createEvent() {
+  createEvent({required BuildContext context, required Widget page}) {
     emitLoading();
-
-    print('create event');
-
-    Future.delayed(const Duration(seconds: 2), () {});
-
+    context.goTo(page);
     emitUpdate();
   }
 
