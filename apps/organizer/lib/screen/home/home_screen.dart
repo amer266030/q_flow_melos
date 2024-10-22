@@ -21,13 +21,24 @@ class HomeScreen extends StatelessWidget {
             children: [
               FloatingActionButton.small(
                 heroTag: null,
-                child: const Icon(Icons.edit),
+                backgroundColor: context.primary,
+                shape: const StadiumBorder(),
                 onPressed: () {},
+                child: const Icon(Icons.logout, color: Colors.white),
               ),
               FloatingActionButton.small(
                 heroTag: null,
-                child: const Icon(Icons.search),
+                backgroundColor: context.primary,
+                shape: const StadiumBorder(),
                 onPressed: () {},
+                child: Icon(Icons.dark_mode, color: context.bg1),
+              ),
+              FloatingActionButton.small(
+                heroTag: null,
+                backgroundColor: context.primary,
+                shape: const StadiumBorder(),
+                onPressed: () {},
+                child: Text('AR', style: TextStyle(color: context.bg1)),
               ),
             ],
           ),
