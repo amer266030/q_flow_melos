@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_melos_widgets/widgets.dart';
+import 'package:organizer/screen/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -33,7 +34,9 @@ class LoginScreen extends StatelessWidget {
           SizedBox(height: context.screenWidth * 0.1),
           PrimaryBtn(
             title: 'Login',
-            callback: () {},
+            callback: () {
+              context.goTo(const HomeScreen());
+            },
           ),
         ],
       ),

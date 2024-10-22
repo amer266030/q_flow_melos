@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_melos_widgets/widgets.dart';
 import 'screen/event/event_home.dart';
 import 'screen/home_screen.dart';
+import 'screen/login_screen.dart';
 import 'screen/rate/company/company_screen.dart';
 import 'screen/rate/visitor/visitor_screen.dart';
 
@@ -35,7 +36,7 @@ class MainApp extends StatelessWidget {
             supportedLocales: context.supportedLocales, // From EasyLocalization
             localizationsDelegates:
                 context.localizationDelegates, // From EasyLocalization
-            home: VisitorScreen(),
+            home: LoginScreen(),
           );
         },
       ),
