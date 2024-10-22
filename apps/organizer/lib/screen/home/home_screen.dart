@@ -64,16 +64,19 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: context.screenHeight * 0.3,
                 width: context.screenWidth,
-                child: Swiper(
-                  itemBuilder: (BuildContext context, int index) {
-                    return Image.asset(
-                      'assets/img/test.png',
-                      fit: BoxFit.fill,
-                    );
-                  },
-                  itemCount: 3,
-                  viewportFraction: 0.8,
-                  scale: 0.9,
+                child: InkWell(
+                  onTap: () {},
+                  child: Swiper(
+                    itemBuilder: (BuildContext context, int index) {
+                      return Image.asset(
+                        'assets/img/test.png',
+                        fit: BoxFit.fill,
+                      );
+                    },
+                    itemCount: 3,
+                    viewportFraction: 0.8,
+                    scale: 0.9,
+                  ),
                 ),
               ),
             ],

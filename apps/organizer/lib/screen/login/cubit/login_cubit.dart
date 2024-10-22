@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:my_melos_widgets/widgets.dart';
-import '../../home_screen.dart';
+import '../../home/home_screen.dart';
 
 part 'login_state.dart';
 
