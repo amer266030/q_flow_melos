@@ -13,7 +13,9 @@ dependencies:
   flutter_bloc: ^8.1.6
   my_melos_widgets: 0.0.1
   easy_localization: ^3.0.7
-
+  numberpicker: ^2.1.2
+  card_swiper: ^2.0.0
+  image_picker: ^1.1.2
   
 
 dev_dependencies:
@@ -27,6 +29,7 @@ flutter:
   assets:
   - assets/translations/
   - assets/logo/
+  - assets/onboarding/
   fonts:
     - family: Inter
       fonts:
