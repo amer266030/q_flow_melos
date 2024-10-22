@@ -22,12 +22,12 @@ class CompanyScreen extends StatelessWidget {
             delegate: SliverChildListDelegate([
               SizedBox(height: context.screenHeight * 0.04),
               Padding(
-                padding: const EdgeInsets.only(left: 8.0),
+                padding: EdgeInsets.only(left: context.screenWidth * 0.03),
                 child: Text('ABC Company', style: context.titleLarge),
               ),
               SizedBox(height: context.screenHeight * 0.02),
               Padding(
-                padding: const EdgeInsets.only(left: 8.0),
+                padding: EdgeInsets.only(left: context.screenWidth * 0.06),
                 child: Text('Rating:', style: context.titleLarge),
               ),
               SizedBox(height: context.screenHeight * 0.04),
