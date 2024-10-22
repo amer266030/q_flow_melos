@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_melos_widgets/extensions/img_ext.dart';
-import 'package:my_melos_widgets/reusable_components/cards/page_header_view.dart';
 import 'package:my_melos_widgets/widgets.dart';
 
 class EditDetailsScreen extends StatelessWidget {

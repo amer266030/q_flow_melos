@@ -4,7 +4,7 @@ import 'package:q_flow/theme_data/extensions/text_style_ext.dart';
 import 'package:q_flow/theme_data/extensions/theme_ext.dart';
 
 import '../../extensions/img_ext.dart';
-import '../../model/company.dart';
+import '../../model/user/company.dart';
 
 class TicketView extends StatelessWidget {
   const TicketView({
@@ -25,10 +25,22 @@ class TicketView extends StatelessWidget {
       child: Column(children: [
         Container(
           decoration: BoxDecoration(
-            color: context.bg2,
-            shape: BoxShape.rectangle,
-            borderRadius: BorderRadius.circular(16),
-          ),
+              color: context.bg2,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(16),
+              border: Border(
+                bottom: BorderSide(
+                  color: context.textColor1.withOpacity(0.3),
+                  width: 1, // Change this to your desired thickness
+                ),
+              ),
+              boxShadow: [
+                BoxShadow(
+                    color: context.textColor1.withOpacity(0.4),
+                    blurRadius: 4,
+                    spreadRadius: 0.5,
+                    offset: Offset(2, 2))
+              ]),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -72,19 +84,18 @@ class TicketView extends StatelessWidget {
             ),
           ),
         ),
-        Divider(
-          height: 0.5,
-          thickness: 0.5,
-          indent: 16,
-          endIndent: 16,
-          color: context.bg3,
-        ),
         Container(
           decoration: BoxDecoration(
-            color: context.bg2,
-            shape: BoxShape.rectangle,
-            borderRadius: BorderRadius.circular(16),
-          ),
+              color: context.bg2,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                    color: context.textColor1.withOpacity(0.4),
+                    blurRadius: 4,
+                    spreadRadius: 0.5,
+                    offset: Offset(2, 2))
+              ]),
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(

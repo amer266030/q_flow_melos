@@ -4,29 +4,35 @@ import 'package:q_flow/theme_data/extensions/text_style_ext.dart';
 import 'package:q_flow/theme_data/extensions/theme_ext.dart';
 
 import '../../extensions/img_ext.dart';
-import '../../model/company.dart';
+import '../../model/user/company.dart';
 
 class CompanyCardListItem extends StatelessWidget {
   const CompanyCardListItem({
     super.key,
     required this.company,
-    required this.callback,
+    required this.toggleBookmark,
     required this.isBookmarked,
   });
   final Company company;
   final bool isBookmarked;
-  final VoidCallback callback;
+  final VoidCallback toggleBookmark;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
       child: Container(
         decoration: BoxDecoration(
-          color: context.bg2,
-          shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(16),
-        ),
+            color: context.bg2,
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                  color: context.textColor1.withOpacity(0.3),
+                  blurRadius: 4,
+                  spreadRadius: 0.5,
+                  offset: Offset(3, 3))
+            ]),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -74,7 +80,7 @@ class CompanyCardListItem extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: callback,
+                onPressed: toggleBookmark,
                 icon: Icon(
                   isBookmarked
                       ? CupertinoIcons.bookmark_fill

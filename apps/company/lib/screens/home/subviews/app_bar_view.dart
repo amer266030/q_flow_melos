@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_melos_widgets/extensions/img_ext.dart';
 import 'package:my_melos_widgets/widgets.dart';
 
 class AppBarView extends StatelessWidget implements PreferredSizeWidget {

@@ -19,11 +19,21 @@ dependencies:
   supabase_flutter: ^2.8.0
   image_picker: ^1.1.2
   animated_snack_bar: ^0.4.0
+  flutter_rating_stars: ^1.1.0
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  flutter_launcher_icons: "^0.14.1"
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo/logo_turquoise.jpg"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/logo/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
 
   flutter_lints: ^5.0.0
 
@@ -32,8 +42,8 @@ flutter:
   assets:
     - assets/logo/
     - assets/onboarding/
-    - assets/onboarding/onboarding_1.png
     - assets/translations/
+    - assets/avatar/
 
   fonts:
     - family: Inter

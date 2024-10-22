@@ -61,6 +61,10 @@ class HomeScreen extends StatelessWidget {
                       backgroundColor: Colors.transparent,
                       itemExtent: context.screenWidth * 0.6,
                       shrinkExtent: context.screenWidth * 0.6,
+                      onTap: (index) {
+                        final company = cubit.companies[index];
+                        cubit.navigateToCompanyDetails(context, company);
+                      },
                       children: cubit.companies
                           .map(
                             (company) => CompanyCardLarge(company: company),
@@ -74,11 +78,17 @@ class HomeScreen extends StatelessWidget {
                       callback: () => cubit.navigateToExplore(context)),
                   Column(
                     children: cubit.companies
-                        .map((company) => CompanyCardListItem(
+                        .map(
+                          (company) => InkWell(
+                            onTap: () => cubit.navigateToCompanyDetails(
+                                context, company),
+                            child: CompanyCardListItem(
                               company: company,
                               isBookmarked: Random().nextBool(),
-                              callback: () => (),
-                            ))
+                              toggleBookmark: () => (),
+                            ),
+                          ),
+                        )
                         .toList(),
                   ),
                 ],

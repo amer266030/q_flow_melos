@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:q_flow/model/enums/experience.dart';
-import 'package:q_flow/model/visitor.dart';
+import 'package:q_flow/model/user/visitor.dart';
 import 'package:q_flow/reusable_components/custom_text_field.dart';
 import 'package:q_flow/reusable_components/page_header_view.dart';
 import 'package:q_flow/reusable_components/buttons/primary_btn.dart';
@@ -12,15 +12,18 @@ import 'package:q_flow/reusable_components/buttons/date_btn_view.dart';
 import 'package:q_flow/theme_data/extensions/text_style_ext.dart';
 import 'package:q_flow/theme_data/extensions/theme_ext.dart';
 
+import '../../extensions/img_ext.dart';
 import '../../model/enums/gender.dart';
 import '../../reusable_components/custom_dropdown_view.dart';
 import '../../reusable_components/buttons/oval_toggle_btns.dart';
 import '../../utils/validations.dart';
 
 class EditProfileScreen extends StatelessWidget {
-  const EditProfileScreen({super.key, this.visitor});
+  const EditProfileScreen(
+      {super.key, this.visitor, this.isInitialSetup = true});
 
   final Visitor? visitor;
+  final bool isInitialSetup;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,7 @@ class EditProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.all(24),
               child: ListView(
                 children: [
-                  PageHeaderView(title: 'Profile'),
+                  PageHeaderView(title: 'Update Profile'),
                   Column(
                     children: [
                       BlocBuilder<EditProfileCubit, EditProfileState>(
@@ -210,8 +213,10 @@ class EditProfileScreen extends StatelessWidget {
                       validation: Validations.name),
                   SizedBox(height: 16),
                   PrimaryBtn(
-                      callback: () => cubit.navigateToBootcamp(context),
-                      title: 'Next')
+                      callback: isInitialSetup
+                          ? () => cubit.navigateToBootcamp(context)
+                          : () => cubit.navigateBack(context),
+                      title: isInitialSetup ? 'Next' : 'Save')
                 ],
               ),
             ),
@@ -235,18 +240,24 @@ class _ImgView extends StatelessWidget {
       children: [
         ClipOval(
           child: Container(
-            color: context.bg3,
-            width: 120,
-            height: 120,
-            child: cubit.avatar != null
-                ? Image.file(cubit.avatar!, fit: BoxFit.cover)
-                : visitor?.avatarUrl == null
-                    ? Icon(
-                        CupertinoIcons.person_fill,
-                        size: 40,
-                        color: context.primary,
-                      )
-                    : Image.network(visitor!.avatarUrl!, fit: BoxFit.cover),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              // border: Border.all(color: context.primary, width: 2),
+            ),
+            width: 140,
+            height: 140,
+            child: Padding(
+              padding: EdgeInsets.all(4),
+              child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  elevation: 5,
+                  child: visitor?.avatarUrl == null
+                      ? ClipOval(
+                          child: Image(image: Img.avatar, fit: BoxFit.cover))
+                      : Image.network(visitor!.avatarUrl!, fit: BoxFit.cover)),
+            ),
           ),
         ),
       ],

@@ -7,10 +7,7 @@ class AppThemes {
   static final lightTheme = ThemeData(
     primaryColor: AppColors.lightPrimary,
     scaffoldBackgroundColor: AppColors.lightBg1,
-    // appBarTheme: AppBarTheme(
-    //     color: AppColors.lightBg1,
-    //     backgroundColor: AppColors.lightBg1,
-    //     elevation: 0),
+    appBarTheme: AppBarTheme(color: AppColors.lightBg1),
     fontFamily: 'Inter',
     textTheme: const TextTheme(
       bodySmall: TextStyle(fontSize: 12, color: AppColors.lightText3),
@@ -18,12 +15,12 @@ class AppThemes {
       bodyLarge: TextStyle(fontSize: 16, color: AppColors.lightText1),
       titleSmall: TextStyle(
           fontSize: 20,
-          color: AppColors.lightText3,
+          color: AppColors.lightText1,
           height: 1,
           fontWeight: FontWeight.bold),
       titleMedium: TextStyle(
           fontSize: 28,
-          color: AppColors.lightText2,
+          color: AppColors.lightText1,
           height: 1,
           fontWeight: FontWeight.bold),
       titleLarge: TextStyle(
@@ -39,6 +36,7 @@ class AppThemes {
   static final darkTheme = ThemeData(
     primaryColor: AppColors.darkPrimary,
     scaffoldBackgroundColor: AppColors.darkBg1,
+    appBarTheme: AppBarTheme(color: AppColors.darkBg1),
     fontFamily: 'Inter',
     textTheme: const TextTheme(
       bodySmall: TextStyle(fontSize: 12, color: AppColors.darkText3),
@@ -46,12 +44,12 @@ class AppThemes {
       bodyLarge: TextStyle(fontSize: 16, color: AppColors.darkText1),
       titleSmall: TextStyle(
           fontSize: 20,
-          color: AppColors.darkText3,
+          color: AppColors.darkText1,
           height: 1,
           fontWeight: FontWeight.bold),
       titleMedium: TextStyle(
           fontSize: 28,
-          color: AppColors.darkText2,
+          color: AppColors.darkText1,
           height: 1,
           fontWeight: FontWeight.bold),
       titleLarge: TextStyle(

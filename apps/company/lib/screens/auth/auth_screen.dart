@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_melos_widgets/extensions/img_ext.dart';
 import 'package:my_melos_widgets/reusable_components/buttons/primary_btn.dart';
-import 'package:my_melos_widgets/reusable_components/cards/page_header_view.dart';
 import 'package:my_melos_widgets/reusable_components/custom_text_field.dart';
 import 'package:my_melos_widgets/utils/validations.dart';
+import 'package:my_melos_widgets/widgets.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -24,8 +24,8 @@ class AuthScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _ImgView(),
-                  PageHeaderView(title: 'Login'),
+                  const _ImgView(),
+                  const PageHeaderView(title: 'Login'),
                   Expanded(
                     child: ListView(
                       children: [
@@ -54,20 +54,20 @@ class _ImgView extends StatelessWidget {
         Column(
           children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 // border: Border.all(color: context.primary, width: 2),
               ),
               width: 140,
               height: 140,
               child: Padding(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
                 child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(100),
                     ),
                     elevation: 5,
-                    child: ClipOval(
+                    child: const ClipOval(
                         child: Image(
                             image: Img.logoTurquoise, fit: BoxFit.cover))),
               ),
