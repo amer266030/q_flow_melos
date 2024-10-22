@@ -632,7 +632,11 @@
       "languageVersion": "3.5"
     }
   ],
+<<<<<<< HEAD
   "generated": "2024-10-22T05:02:17.432750Z",
+=======
+  "generated": "2024-10-21T23:23:43.306892Z",
+>>>>>>> company_home
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/abu_mukhlef/Developer/flutter",

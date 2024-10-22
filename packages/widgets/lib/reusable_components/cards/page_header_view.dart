@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_melos_widgets/widgets.dart';
+import 'package:my_melos_widgets/theme_data/extensions/text_style_ext.dart';
 
 class PageHeaderView extends StatelessWidget {
   const PageHeaderView({super.key, required this.title});
