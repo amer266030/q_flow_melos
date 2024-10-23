@@ -1,3 +1,4 @@
+import 'package:company/mangers/alert_manger.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_melos_widgets/widgets.dart';
@@ -26,7 +27,10 @@ class AppBarView extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () => (),
+          onPressed: () {
+            AlertManager().showQRAlert(
+                context: context, title: "Yara Albouq", qr: Img.logo);
+          },
           icon: Icon(Icons.qr_code, size: 40),
         ),
         const SizedBox(width: 24),

@@ -45,7 +45,7 @@ class EditDetailsScreen extends StatelessWidget {
                         validation: Validations.name),
                     CustomTextField(
                       hintText: 'Description',
-                      controller: cubit.nameController,
+                      controller: cubit.descriptionController,
                       validation: Validations.name,
                       borderRadius: 40,
                       min: 4,
@@ -73,7 +73,7 @@ class EditDetailsScreen extends StatelessWidget {
                           child: Icon(BootstrapIcons.twitter_x),
                         ),
                         hintText: 'Twitter',
-                        controller: cubit.websiteController,
+                        controller: cubit.xController,
                         validation: Validations.name),
                     SizedBox(height: 16),
                     Row(

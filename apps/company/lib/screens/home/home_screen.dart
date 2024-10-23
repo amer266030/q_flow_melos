@@ -1,8 +1,8 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:company/model/enum/visitor_status.dart';
 import 'package:company/model/enum/events.dart';
-import 'package:company/reusable_components/swiper_card.dart';
-import 'package:company/reusable_components/visitor_card.dart';
+import 'package:company/reusable_components/cards/swiper_card.dart';
+import 'package:company/reusable_components/cards/visitor_card.dart';
 import 'package:company/screens/drawer/drawer_screen.dart';
 import 'package:company/screens/home/home_cubit.dart';
 import 'package:company/screens/home/subviews/app_bar_view.dart';
@@ -91,13 +91,15 @@ class HomeScreen extends StatelessWidget {
                                   ? Swiper(
                                       layout: SwiperLayout.CUSTOM,
                                       customLayoutOption: CustomLayoutOption(
-                                          startIndex: -1, stateCount: 2)
+                                        startIndex: -1,
+                                        stateCount: 3,
+                                      )
                                         ..addRotate(
                                             [-70.0 / 200, 0.0, 90.0 / 200])
                                         ..addTranslate([
                                           Offset(-180.0, -20.0),
                                           Offset(0.0, 0.0),
-                                          Offset(170.0, -40.0)
+                                          Offset(170.0, -40.0),
                                         ]),
                                       itemWidth: context.screenWidth * 0.9,
                                       itemCount: cubit.filteredVisitors.length,

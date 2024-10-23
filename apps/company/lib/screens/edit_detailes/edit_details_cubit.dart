@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:company/screens/home/home_screen.dart';
 import 'package:company/screens/position_opening/position_opening_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

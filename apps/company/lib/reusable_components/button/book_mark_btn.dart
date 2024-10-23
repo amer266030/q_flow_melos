@@ -17,7 +17,7 @@ class BookMarkbtn extends StatelessWidget {
       onPressed: toggleBookmark,
       icon: Icon(
         isBookmarked ? CupertinoIcons.bookmark_fill : CupertinoIcons.bookmark,
-        size: context.titleSmall.fontSize,
+        size: context.titleMedium.fontSize,
         color: isBookmarked ? context.primary : context.textColor2,
       ),
     );
