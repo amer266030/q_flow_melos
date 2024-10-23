@@ -28,8 +28,8 @@ class AppBarView extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           onPressed: () {
-            AlertManager().showQRAlert(
-                context: context, title: "Yara Albouq", qr: Img.logo);
+            AlertManager()
+                .showQRAlert(context: context, title: "SDAIA", qr: Img.logo);
           },
           icon: Icon(Icons.qr_code, size: 40),
         ),

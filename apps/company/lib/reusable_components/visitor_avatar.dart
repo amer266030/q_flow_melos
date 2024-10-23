@@ -20,7 +20,11 @@ class VisitorAvatar extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
-          boxShadow: [BoxShadow(blurRadius: 1)]),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 1,
+            )
+          ]),
       child: Icon(
         CupertinoIcons.person_solid,
         color: context.bg1,

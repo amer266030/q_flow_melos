@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_melos_widgets/theme_data/extensions/text_style_ext.dart';
 import 'package:my_melos_widgets/theme_data/extensions/theme_ext.dart';
 
-
 class PrimaryBtn extends StatelessWidget {
   const PrimaryBtn(
       {super.key,
