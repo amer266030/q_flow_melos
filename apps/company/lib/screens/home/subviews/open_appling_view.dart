@@ -27,10 +27,8 @@ class OpenApplyingView extends StatelessWidget {
               color: context.textColor1,
             ),
           ),
-          Switch(
-            value: value,
-            onChanged: onOpen,
-          ),
+         
+         
         ],
       ),
     );

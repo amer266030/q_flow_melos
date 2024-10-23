@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:my_melos_widgets/widgets.dart';
+import 'package:my_melos_widgets/theme_data/extensions/text_style_ext.dart';
+import 'package:my_melos_widgets/theme_data/extensions/theme_ext.dart';
 
-class OvalToggleButtons extends StatelessWidget {
-  const OvalToggleButtons({
-    super.key,
-    required this.currentIndex,
-    required this.tabs,
-    required this.callback,
-  });
+class ExpandedToggleButtons extends StatelessWidget {
+  const ExpandedToggleButtons(
+      {super.key,
+      required this.currentIndex,
+      required this.tabs,
+      required this.callback});
   final int currentIndex;
   final List<String> tabs;
   final ValueChanged<int> callback;
@@ -16,46 +16,32 @@ class OvalToggleButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     List<bool> isSelected =
         List.generate(tabs.length, (index) => index == currentIndex);
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: Container(
-        decoration: BoxDecoration(
-          color: context.bg1,
-          shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(100),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4),
-          child: ToggleButtons(
-            isSelected: isSelected,
-            onPressed: (idx) => callback(idx),
-            borderColor: Colors.transparent,
-            selectedBorderColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            fillColor: Colors.transparent,
-            splashColor: Colors.transparent, // Remove splash effect
-            highlightColor: Colors.transparent, // Remove pressed color
-            color: context.bg2, // Default unselected color
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            borderRadius: BorderRadius.circular(100),
-            constraints: const BoxConstraints(),
-            children: tabs
-                .asMap() // Use asMap to get index along with value
-                .map((index, str) => MapEntry(
-                      index,
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 4.0, horizontal: 8),
+    return Container(
+      decoration: BoxDecoration(
+        color: context.bg2,
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(100),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: tabs
+              .asMap() // Use asMap to get index along with value
+              .map((index, str) => MapEntry(
+                    index,
+                    Expanded(
+                      child: InkWell(
+                        onTap: () => callback(index),
                         child: _ItemView(
                           str: str,
                           isSelected: isSelected[index],
                         ),
                       ),
-                    ))
-                .values
-                .toList(),
-          ),
+                    ),
+                  ))
+              .values
+              .toList(),
         ),
       ),
     );
@@ -80,7 +66,8 @@ class _ItemView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(4.0),
             child: ConstrainedBox(
-              constraints: BoxConstraints(minWidth: 55, minHeight: 25),
+              constraints:
+                  BoxConstraints(minWidth: double.infinity, minHeight: 25),
             ),
           ),
         ),
@@ -100,15 +87,19 @@ class _ItemView extends StatelessWidget {
             borderRadius: BorderRadius.circular(100),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8),
             child: ConstrainedBox(
-              constraints: BoxConstraints(minWidth: 55, minHeight: 25),
+              constraints:
+                  BoxConstraints(minWidth: double.infinity, minHeight: 25),
               child: Center(
                 child: Text(
                   str,
                   style: TextStyle(
                     fontSize: context.bodyMedium.fontSize,
                     color: isSelected ? Colors.white : context.textColor3,
+                    fontWeight: isSelected
+                        ? context.titleSmall.fontWeight
+                        : context.bodySmall.fontWeight,
                   ),
                 ),
               ),

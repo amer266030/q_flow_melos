@@ -39,7 +39,7 @@ class AppBarView extends StatelessWidget implements PreferredSizeWidget {
         preferredSize: Size.fromHeight(1.0),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Divider(color: context.bg3),
+          child: Divider(color: context.bg2),
         ),
       ),
     );

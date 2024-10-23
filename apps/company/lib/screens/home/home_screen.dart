@@ -4,14 +4,15 @@ import 'package:company/model/enum/events.dart';
 import 'package:company/reusable_components/cards/swiper_card.dart';
 import 'package:company/reusable_components/cards/visitor_card.dart';
 import 'package:company/screens/drawer/drawer_screen.dart';
+import 'package:company/screens/drawer/subviews/toggle_list_item.dart';
 import 'package:company/screens/home/home_cubit.dart';
 import 'package:company/screens/home/subviews/app_bar_view.dart';
 import 'package:company/screens/home/subviews/filter_item_view.dart';
 import 'package:company/screens/home/subviews/open_appling_view.dart';
-import 'package:company/screens/home/subviews/queue_limit_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_melos_widgets/reusable_components/buttons/custom_switch.dart';
 import 'package:my_melos_widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -62,20 +63,33 @@ class HomeScreen extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            OpenApplyingView(
-                              value: cubit.isOpenApplying,
-                              onOpen: (value) {
-                                cubit.toggleOpenApplying(value);
-                              },
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Queue Status',
+                                    style: TextStyle(
+                                      fontSize: context.bodyLarge.fontSize,
+                                      fontWeight: FontWeight.bold,
+                                      color: context.textColor1,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  Expanded(
+                                    child: CustomSwitch(
+                                        value: cubit.isOpenApplying,
+                                        option1: "open",
+                                        option2: "close",
+                                        onChanged: (_) =>
+                                            cubit.toggleOpenApplying(context)),
+                                  )
+                                ],
+                              ),
                             ),
-                            QueueLimitView(
-                              value: cubit.queueLimit.toInt(),
-                              onChange: (value) {
-                                cubit.queueLimit = value.toDouble();
-                                cubit.emitUpdate();
-                              },
-                            ),
-                            ToggleBtnsV2(
+                            ExpandedToggleButtons(
                               currentIndex: VisitorStatus.values
                                   .indexOf(cubit.selectedStatus),
                               tabs: VisitorStatus.values
@@ -88,34 +102,28 @@ class HomeScreen extends StatelessWidget {
                             Expanded(
                               child: cubit.selectedStatus ==
                                       VisitorStatus.inQueue
-                                  ? Swiper(
-                                      layout: SwiperLayout.CUSTOM,
-                                      customLayoutOption: CustomLayoutOption(
-                                        startIndex: -1,
-                                        stateCount: 3,
-                                      )
-                                        ..addRotate(
-                                            [-70.0 / 200, 0.0, 90.0 / 200])
-                                        ..addTranslate([
-                                          Offset(-180.0, -20.0),
-                                          Offset(0.0, 0.0),
-                                          Offset(170.0, -40.0),
-                                        ]),
-                                      itemWidth: context.screenWidth * 0.9,
-                                      itemCount: cubit.filteredVisitors.length,
-                                      itemBuilder: (context, index) {
-                                        final visitor =
-                                            cubit.filteredVisitors[index];
-                                        return Column(
-                                          children: [
-                                            VisitorAvatarControl(),
-                                          ],
-                                        );
-                                      },
-                                      pagination: SwiperPagination(
-                                        builder: FractionPaginationBuilder(
-                                          color: context.textColor3,
-                                          activeColor: context.secondary,
+                                  ? Padding(
+                                      padding: const EdgeInsets.all(16.0),
+                                      child: Swiper(
+                                        layout: SwiperLayout.DEFAULT,
+                                        itemWidth: context.screenWidth,
+                                        itemCount:
+                                            cubit.filteredVisitors.length,
+                                        itemBuilder: (context, index) {
+                                          final visitor =
+                                              cubit.filteredVisitors[index];
+                                          return Column(
+                                            children: [
+                                              VisitorAvatarControl(
+                                                  visitor: visitor),
+                                            ],
+                                          );
+                                        },
+                                        pagination: SwiperPagination(
+                                          builder: FractionPaginationBuilder(
+                                            color: context.textColor3,
+                                            activeColor: context.primary,
+                                          ),
                                         ),
                                       ),
                                     )

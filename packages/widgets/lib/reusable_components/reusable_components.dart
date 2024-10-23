@@ -9,4 +9,4 @@ export './buttons/primary_btn.dart';
 export './buttons/secondary_btn.dart';
 export './buttons/toggle_btns_v2.dart';
 export './star_rating_view.dart';
-export 'visitor_rating_build.dart';
+export './buttons/expanded_toggle_buttons.dart';

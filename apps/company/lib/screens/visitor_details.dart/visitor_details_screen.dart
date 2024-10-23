@@ -3,6 +3,7 @@ import 'package:company/model/enum/tech_skill.dart';
 import 'package:company/model/enum/visitor_rating.dart';
 import 'package:company/reusable_components/button/book_mark_btn.dart';
 import 'package:company/reusable_components/visitor_avatar.dart';
+import 'package:company/reusable_components/visitor_rating_build.dart';
 import 'package:company/screens/visitor_details.dart/subviews/social_media.dart';
 import 'package:company/screens/visitor_details.dart/visitor_details_cubit.dart';
 import 'package:flutter/cupertino.dart';
@@ -76,7 +77,7 @@ class VisitorDetailsScreen extends StatelessWidget {
                                   icon: Icon(
                                     CupertinoIcons.doc_person_fill,
                                     size: 35,
-                                    color: context.secondary,
+                                    color: context.primary,
                                   )),
                             )
                           ],
@@ -107,7 +108,7 @@ class VisitorDetailsScreen extends StatelessWidget {
                                 .toList(),
                           ),
                         ),
-                        Divider(color: context.bg3),
+                        Divider(color: context.bg2),
                         SocialMediaView(cubit: cubit),
                         SizedBox(
                           height: 10,
@@ -133,7 +134,7 @@ class VisitorDetailsScreen extends StatelessWidget {
                                     cubit.setRating(rating, value);
                                   },
                                 ),
-                                Divider()
+                                Divider(color: context.bg2),
                               ],
                             ),
                           );

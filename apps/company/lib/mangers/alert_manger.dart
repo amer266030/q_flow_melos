@@ -57,7 +57,7 @@ class AlertManager {
             dismiss(context);
           },
           onCancel: () {
-            onCancel(); 
+            onCancel();
             dismiss(context);
           },
         );
@@ -81,7 +81,6 @@ class AlertManager {
         return QRAlert(
           qr: qr,
           title: title,
-          subTitle: subTitle,
         );
       },
     ).then((_) {

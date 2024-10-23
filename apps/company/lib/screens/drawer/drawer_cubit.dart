@@ -13,7 +13,7 @@ part 'drawer_state.dart';
 class DrawerCubit extends Cubit<DrawerState> {
   DrawerCubit() : super(DrawerInitial());
   bool isDarkMode = true;
-  bool isEnglish = true;
+  bool isEnglish = false;
 
   navigateToEditDetails(BuildContext context) {
     Navigator.of(context)

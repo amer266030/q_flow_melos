@@ -19,6 +19,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   bool isOpenApplying = false;
   double queueLimit = 10;
+  
 
   List<Visitor> visitor = [];
 
@@ -29,11 +30,12 @@ class HomeCubit extends Cubit<HomeState> {
     emitUpdate();
   }
 
-  void toggleOpenApplying(bool value) {
-    isOpenApplying = value;
-    emit(UpdateUIState());
+  
+void toggleOpenApplying(BuildContext context) {
+    isOpenApplying = !isOpenApplying;
+   
+    emitUpdate();
   }
-
   setSelectedStatus(int idx) {
     selectedStatus = VisitorStatus.values[idx];
     filterVisitors();
