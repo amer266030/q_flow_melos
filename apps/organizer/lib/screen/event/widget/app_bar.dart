@@ -9,32 +9,29 @@ class AppBarView extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
-          onPressed: () => Scaffold.of(context).openDrawer(),
-          icon: const Icon(
-            Icons.menu,
-            size: 30,
-          )),
-      centerTitle: true,
-      title: Column(
+      title: Row(
         children: [
-          AspectRatio(
-            aspectRatio: 5.5,
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 1,
-                    blurRadius: 3,
-                    blurStyle: BlurStyle.outer,
-                  ),
-                ],
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 1.5,
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      spreadRadius: 1,
+                      blurRadius: 3,
+                      blurStyle: BlurStyle.outer,
+                    ),
+                  ],
+                ),
+                child: Image.asset('assets/img/q_green.png'),
               ),
-              child: const Image(image: Img.logo),
             ),
           ),
+          Text('2024', style: context.titleSmall),
+          Text('Event Name', style: context.titleSmall),
         ],
       ),
       actions: [
@@ -48,7 +45,7 @@ class AppBarView extends StatelessWidget implements PreferredSizeWidget {
         preferredSize: const Size.fromHeight(1.0),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Divider(color: context.bg3),
+          child: Divider(),
         ),
       ),
     );
