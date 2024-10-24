@@ -1,23 +1,17 @@
-<<<<<<< HEAD
-import 'package:flutter/material.dart';
-import 'package:my_melos_widgets/widgets.dart';
-=======
-
 import 'package:flutter/material.dart';
 import 'package:my_melos_widgets/theme_data/extensions/theme_ext.dart';
->>>>>>> origin/company_home
 
-class CustomSwitch extends StatelessWidget {
+class CustomIconsSwitch extends StatelessWidget {
   final bool value;
-  final String option1;
-  final String option2;
+  final IconData icon1;
+  final IconData icon2;
   final ValueChanged<bool> onChanged;
 
-  const CustomSwitch({
+  const CustomIconsSwitch({
     Key? key,
     required this.value,
-    required this.option1,
-    required this.option2,
+    required this.icon1,
+    required this.icon2,
     required this.onChanged,
   }) : super(key: key);
 
@@ -37,23 +31,15 @@ class CustomSwitch extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Text(
-                    option1,
-                    style: TextStyle(
-                      color: value ? context.textColor3 : Colors.transparent,
-                    ),
-                  ),
-                ),
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Icon(icon1,
+                        color:
+                            value ? context.textColor3 : Colors.transparent)),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Text(
-                    option2,
-                    style: TextStyle(
-                      color: value ? Colors.transparent : context.textColor3,
-                    ),
-                  ),
-                ),
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Icon(icon2,
+                        color:
+                            value ? Colors.transparent : context.textColor3)),
               ],
             ),
             Align(
@@ -81,9 +67,9 @@ class CustomSwitch extends StatelessWidget {
                     ),
                   ),
                   child: Center(
-                    child: Text(
-                      !value ? option1 : option2,
-                      style: TextStyle(color: Colors.white),
+                    child: Icon(
+                      !value ? icon1 : icon2,
+                      color: Colors.white,
                     ),
                   ),
                 ),

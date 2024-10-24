@@ -56,8 +56,13 @@ file:///Users/abu_mukhlef/.pub-cache/hosted/pub.dev/http-1.2.2/
 file:///Users/abu_mukhlef/.pub-cache/hosted/pub.dev/http-1.2.2/lib/
 http_parser
 2.12
+<<<<<<< HEAD
 file:///Users/abu_mukhlef/.pub-cache/hosted/pub.dev/http_parser-4.0.2/
 file:///Users/abu_mukhlef/.pub-cache/hosted/pub.dev/http_parser-4.0.2/lib/
+=======
+file:///Users/yara/.pub-cache/hosted/pub.dev/http_parser-4.0.2/
+file:///Users/yara/.pub-cache/hosted/pub.dev/http_parser-4.0.2/lib/
+>>>>>>> origin/company_home
 intl
 3.0
 file:///Users/abu_mukhlef/.pub-cache/hosted/pub.dev/intl-0.19.0/
@@ -84,8 +89,13 @@ file:///Users/abu_mukhlef/.pub-cache/hosted/pub.dev/meta-1.15.0/
 file:///Users/abu_mukhlef/.pub-cache/hosted/pub.dev/meta-1.15.0/lib/
 mustache_template
 2.12
+<<<<<<< HEAD
 file:///Users/abu_mukhlef/.pub-cache/hosted/pub.dev/mustache_template-2.0.0/
 file:///Users/abu_mukhlef/.pub-cache/hosted/pub.dev/mustache_template-2.0.0/lib/
+=======
+file:///Users/yara/.pub-cache/hosted/pub.dev/mustache_template-2.0.0/
+file:///Users/yara/.pub-cache/hosted/pub.dev/mustache_template-2.0.0/lib/
+>>>>>>> origin/company_home
 path
 3.4
 file:///Users/abu_mukhlef/.pub-cache/hosted/pub.dev/path-1.9.1/

@@ -9,6 +9,12 @@ extension Img on ImageProvider {
   static const ob1 = AssetImage('assets/onboarding/onboarding_1.png');
   static const ob2 = AssetImage('assets/onboarding/onboarding_2.png');
   static const ob3 = AssetImage('assets/onboarding/onboarding_3.png');
+<<<<<<< HEAD
   // Avatar
   static const avatar = AssetImage('assets/avatar/avatar.jpg');
+=======
+
+  //Mock Image
+  static const cv = AssetImage('assets/mock_image/cv.png');
+>>>>>>> origin/company_home
 }

@@ -3,6 +3,9 @@ import 'package:company/mock_data/visitor_data.dart';
 import 'package:company/model/enum/visitor_status.dart';
 import 'package:company/model/enum/events.dart';
 import 'package:company/model/user/visitor.dart';
+import 'package:company/screens/visitor_details.dart/visitor_details_screen.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
 part 'home_state.dart';
@@ -12,10 +15,11 @@ class HomeCubit extends Cubit<HomeState> {
   List<Visitor> filteredVisitors = [];
   VisitorStatus selectedStatus = VisitorStatus.inQueue;
 
-  Events? selectedEvent = Events.jopFair111;
+  Events? selectedEvent = Events.jobFair111;
 
   bool isOpenApplying = false;
   double queueLimit = 10;
+  
 
   List<Visitor> visitor = [];
 
@@ -26,11 +30,12 @@ class HomeCubit extends Cubit<HomeState> {
     emitUpdate();
   }
 
-  void toggleOpenApplying(bool value) {
-    isOpenApplying = value;
-    emit(UpdateUIState());
+  
+void toggleOpenApplying(BuildContext context) {
+    isOpenApplying = !isOpenApplying;
+   
+    emitUpdate();
   }
-
   setSelectedStatus(int idx) {
     selectedStatus = VisitorStatus.values[idx];
     filterVisitors();
@@ -43,6 +48,9 @@ class HomeCubit extends Cubit<HomeState> {
     print("Filtered Visitors Count: ${filteredVisitors.length}"); // Debug line
     emit(UpdateUIState());
   }
+
+  navigateToVisitorDetails(BuildContext context) => Navigator.of(context)
+      .push(MaterialPageRoute(builder: (context) => VisitorDetailsScreen()));
 
   void emitUpdate() => emit(UpdateUIState());
 }

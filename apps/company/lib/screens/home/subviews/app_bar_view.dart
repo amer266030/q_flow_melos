@@ -1,3 +1,4 @@
+import 'package:company/mangers/alert_manger.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_melos_widgets/extensions/img_ext.dart';
@@ -18,38 +19,19 @@ class AppBarView extends StatelessWidget implements PreferredSizeWidget {
             size: 30,
           )),
       centerTitle: true,
-      title: Column(
-        children: [
-          AspectRatio(
-            aspectRatio: 5.5,
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 1,
-                    blurRadius: 3,
-                    blurStyle: BlurStyle.outer,
-                  ),
-                ],
-              ),
-              child: Image(image: Img.logo),
-            ),
-          ),
-          // const SizedBox(height: 8),
-          // Text(
-          //   "SDAIA",
-          //   style: TextStyle(
-          //     color: context.textColor1,
-          //     fontSize: context.bodyLarge.fontSize,
-          //   ),
-          // ),
-        ],
+      title: Text(
+        "SDAIA",
+        style: TextStyle(
+          color: context.textColor1,
+          fontSize: context.titleMedium.fontSize,
+        ),
       ),
       actions: [
         IconButton(
-          onPressed: () => (),
+          onPressed: () {
+            AlertManager().showQRAlert(
+                context: context, title: "Yara Albouq", qr: Img.logo);
+          },
           icon: Icon(Icons.qr_code, size: 40),
         ),
         const SizedBox(width: 24),
@@ -58,7 +40,7 @@ class AppBarView extends StatelessWidget implements PreferredSizeWidget {
         preferredSize: Size.fromHeight(1.0),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Divider(color: context.bg3),
+          child: Divider(color: context.bg2),
         ),
       ),
     );

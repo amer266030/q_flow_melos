@@ -19,7 +19,11 @@ dependencies:
   supabase_flutter: ^2.8.0
   image_picker: ^1.1.2
   animated_snack_bar: ^0.4.0
+<<<<<<< HEAD
   flutter_rating_stars: ^1.1.0
+=======
+  
+>>>>>>> origin/company_home
 
 
 dev_dependencies:

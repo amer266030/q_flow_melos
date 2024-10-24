@@ -3,12 +3,13 @@ import 'package:company/reusable_components/visitor_avatar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_melos_widgets/widgets.dart';
 
-class SwiperCard extends StatelessWidget {
-  const SwiperCard({
-    super.key,
+class VisitorAvatarControl extends StatelessWidget {
+  const VisitorAvatarControl({
     required this.visitor,
+    super.key,
   });
   final Visitor visitor;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,12 +17,12 @@ class SwiperCard extends StatelessWidget {
         child: SizedBox(
           child: Column(
             children: [
-              SizedBox(
-                height: 50,
-              ),
-              AspectRatio(aspectRatio: 2.3, child: VisitorAvatar()),
+              AspectRatio(aspectRatio: 2, child: VisitorAvatar()),
               SizedBox(
                 height: 16,
+              ),
+              SizedBox(
+                height: 8,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -43,10 +44,13 @@ class SwiperCard extends StatelessWidget {
                       softWrap: true),
                 ],
               ),
-              SizedBox(
-                height: 8,
-              ),
               Text(visitor.id ?? '',
+                  style: TextStyle(
+                      fontSize: context.bodyLarge.fontSize,
+                      color: context.textColor1),
+                  maxLines: 3,
+                  softWrap: true),
+              Text('Front end developer',
                   style: TextStyle(
                       fontSize: context.bodyLarge.fontSize,
                       color: context.textColor1),

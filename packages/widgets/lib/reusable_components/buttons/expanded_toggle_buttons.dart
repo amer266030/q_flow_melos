@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:my_melos_widgets/widgets.dart';
+=======
+import 'package:my_melos_widgets/theme_data/extensions/text_style_ext.dart';
+import 'package:my_melos_widgets/theme_data/extensions/theme_ext.dart';
+>>>>>>> origin/company_home
 
 class ExpandedToggleButtons extends StatelessWidget {
   const ExpandedToggleButtons(
@@ -96,6 +101,12 @@ class _ItemView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: context.bodyMedium.fontSize,
                     color: isSelected ? Colors.white : context.textColor3,
+<<<<<<< HEAD
+=======
+                    fontWeight: isSelected
+                        ? context.titleSmall.fontWeight
+                        : context.bodySmall.fontWeight,
+>>>>>>> origin/company_home
                   ),
                 ),
               ),

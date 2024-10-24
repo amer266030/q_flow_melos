@@ -10,12 +10,13 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  bootstrap_icons: ^1.11.3
   flutter_bloc: ^8.1.6
   my_melos_widgets: 0.0.1
   easy_localization: ^3.0.7
-  numberpicker: ^2.1.2
   card_swiper: ^2.0.0
   image_picker: ^1.1.2
+  url_launcher: ^6.0.20
   
 
 dev_dependencies:
@@ -30,6 +31,7 @@ flutter:
   - assets/translations/
   - assets/logo/
   - assets/onboarding/
+  - assets/mock_image/
   fonts:
     - family: Inter
       fonts:

@@ -15,7 +15,7 @@ class VisitorAvatar extends StatelessWidget {
             colors: [
               context.primary,
               context.primary.withOpacity(0.9),
-              context.primary.withOpacity(0.7),
+              context.primary.withOpacity(0.6),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,

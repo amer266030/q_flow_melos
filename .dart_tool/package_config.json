@@ -260,7 +260,11 @@
       "languageVersion": "3.0"
     }
   ],
+<<<<<<< HEAD
   "generated": "2024-10-22T08:17:50.844258Z",
+=======
+  "generated": "2024-10-22T21:01:09.456303Z",
+>>>>>>> origin/company_home
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/abu_mukhlef/Developer/flutter",

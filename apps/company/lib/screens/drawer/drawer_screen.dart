@@ -1,5 +1,6 @@
 import 'package:company/screens/drawer/drawer_cubit.dart';
 import 'package:company/screens/drawer/subviews/drawer_item_view.dart';
+import 'package:company/screens/drawer/subviews/toggle_list_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -87,7 +88,7 @@ class DrawerScreen extends StatelessWidget {
                     Text("200",
                         style: TextStyle(
                             fontSize: context.bodySmall.fontSize,
-                            color: context.secondary)),
+                            color: context.primary)),
                   ],
                 ),
                 Divider(
@@ -101,13 +102,15 @@ class DrawerScreen extends StatelessWidget {
                   onTap: () => cubit.navigateToPrivacyPolicy(context),
                   title: 'Privacy Policy',
                 ),
-                DrawerToggleItem(
+                ToggleListItem(
                     title: 'Language',
                     value: cubit.isEnglish,
+                    strItems: ['AR', 'EN'],
                     callback: () => cubit.toggleLanguage(context)),
-                DrawerToggleItem(
+                ToggleListItem(
                     title: 'Theme Mode',
                     value: cubit.isDarkMode,
+                    iconItems: [CupertinoIcons.sun_max, CupertinoIcons.moon],
                     callback: () => cubit.toggleDarkMode(context)),
                 DrawerItemView(
                     title: 'Logout', onTap: () => cubit.logout(context)),

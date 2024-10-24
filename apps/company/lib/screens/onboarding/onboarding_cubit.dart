@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:company/screens/home/home_screen.dart';
+import 'package:company/screens/auth/auth_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
@@ -18,7 +18,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
   }
 
   navigateToAuth(BuildContext context) => Navigator.of(context)
-      .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+      .pushReplacement(MaterialPageRoute(builder: (context) => AuthScreen()));
 
   final List<AssetImage> images = [Img.ob1, Img.ob2, Img.ob3];
   final List<(String, String)> content = [

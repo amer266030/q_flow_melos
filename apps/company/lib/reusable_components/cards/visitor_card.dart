@@ -1,4 +1,5 @@
 import 'package:company/model/user/visitor.dart';
+import 'package:company/reusable_components/button/book_mark_btn.dart';
 import 'package:company/reusable_components/visitor_avatar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_melos_widgets/widgets.dart';
@@ -21,10 +22,16 @@ class VisitorCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Container(
         decoration: BoxDecoration(
-          color: context.bg2,
-          shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(16),
-        ),
+            color: context.bg2,
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                  color: context.textColor1.withOpacity(0.3),
+                  blurRadius: 4,
+                  spreadRadius: 0.5,
+                  offset: Offset(3, 3))
+            ]),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -82,16 +89,8 @@ class VisitorCard extends StatelessWidget {
                   ],
                 ),
               ),
-              IconButton(
-                onPressed: toggleBookmark,
-                icon: Icon(
-                  isBookmarked
-                      ? CupertinoIcons.bookmark_fill
-                      : CupertinoIcons.bookmark,
-                  size: context.titleSmall.fontSize,
-                  color: isBookmarked ? context.primary : context.textColor2,
-                ),
-              )
+              BookMarkbtn(
+                  isBookmarked: isBookmarked, toggleBookmark: toggleBookmark)
             ],
           ),
         ),
